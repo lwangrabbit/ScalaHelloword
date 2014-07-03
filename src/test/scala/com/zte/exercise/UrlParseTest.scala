@@ -23,4 +23,11 @@ class UrlParseTest extends FunSpec with Matchers {
       urlParse.getProtocol() should be ("https")
     }
 	}
+  describe("UrlParse's get domain") {
+    it("http://www.google.com, the domain should return www.google.com") {
+      val url = "http://www.google.com"
+      val urlParse = new UrlParse(url)
+      urlParse.getDomain() should be ("www.google.com")
+    }
+  }
 }
