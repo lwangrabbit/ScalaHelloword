@@ -16,6 +16,13 @@ class UrlParse(val url:String) {
   }
 
   def getPath():String = {
-    ""
+    val domainStartIndex = url.indexOf("//") + 2
+    val domainEndIndex = url.indexOf('/',domainStartIndex)
+    if(domainEndIndex < 0) {
+      return ""
+    } else {
+      val pathStartIndex = domainEndIndex + 1
+      return url.substring(pathStartIndex)
+    }
   }
 }
