@@ -8,7 +8,7 @@ import org.junit.runner.RunWith
 class UrlParseTest extends FunSpec with Matchers {
 	describe("UrlParse's get protocol") {
 		it("http://www.google.com, the protocol should return http") {
-			val url = "www.google.com"
+			val url = "http://www.google.com"
 			val urlParse = new UrlParse(url)
 			urlParse.getProtocol should be ("http")
 		}

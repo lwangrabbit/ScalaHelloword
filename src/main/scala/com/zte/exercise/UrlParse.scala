@@ -2,6 +2,7 @@ package com.zte.exercise
 
 class UrlParse(val url:String) {
   def getProtocol():String = {
-    "http"
+    val strIndex = url.indexOf(":")
+    url.substring(0, strIndex)
   }
 }
