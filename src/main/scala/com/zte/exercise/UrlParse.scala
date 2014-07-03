@@ -14,4 +14,8 @@ class UrlParse(val url:String) {
     else
       url.substring(domainStartIndex, domainEndIndex)
   }
+
+  def getPath():String = {
+    ""
+  }
 }

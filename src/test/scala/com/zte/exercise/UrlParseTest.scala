@@ -6,13 +6,14 @@ import org.junit.runner.RunWith
 
 @RunWith(classOf[JUnitRunner])
 class UrlParseTest extends FunSpec with Matchers {
-	describe("UrlParse's get protocol, get domain") {
+	describe("UrlParse's get protocol, get domain, get path") {
 		it("http://www.google.com, the protocol should return http," +
        "the domain should return www.google.com") {
 			val url = "http://www.google.com"
 			val urlParse = new UrlParse(url)
 			urlParse.getProtocol() should be ("http")
       urlParse.getDomain() should be ("www.google.com")
+      urlParse.getPath() should be ("")
 		}
     it("ftp://test.com, the protocol should return ftp," +
       "the domain should return test.com") {
