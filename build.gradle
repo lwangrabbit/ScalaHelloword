@@ -1,0 +1,22 @@
+apply plugin: 'scala'
+apply plugin: 'java'
+
+sourceCompatibility = 1.5
+version = '1.0'
+
+repositories {
+    maven{
+        url "http://10.62.97.45:8081/nexus/content/groups/public"
+    }
+}
+
+sourceCompatibility = 1.7
+
+ext.scalaVersion = '2.10.3'
+ext.scalatestVersion = '2.0.1-SNAP'
+
+dependencies {
+    compile "org.scala-lang:scala-library:$scalaVersion"
+    testCompile "org.scalatest:scalatest_2.10:$scalatestVersion"
+	testCompile "junit:junit:4.11"
+}
