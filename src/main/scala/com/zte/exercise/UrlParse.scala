@@ -7,6 +7,7 @@ class UrlParse(val url:String) {
   }
 
   def getDomain():String = {
-    "www.google.com"
+    val strIndex = url.indexOf("//")
+    url.substring(strIndex + 2)
   }
 }
