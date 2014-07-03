@@ -7,11 +7,11 @@ class UrlParse(val url:String) {
   }
 
   def getDomain():String = {
-    val strIndex = url.indexOf("//")
-    val strEndIndex = url.indexOf('/',strIndex + 2)
-    if(strEndIndex < 0)
-      url.substring(strIndex + 2)
+    val domainStartIndex = url.indexOf("//") + 2
+    val domainEndIndex = url.indexOf('/',domainStartIndex)
+    if(domainEndIndex < 0)
+      url.substring(domainStartIndex)
     else
-      url.substring(strIndex + 2, strEndIndex)
+      url.substring(domainStartIndex, domainEndIndex)
   }
 }
