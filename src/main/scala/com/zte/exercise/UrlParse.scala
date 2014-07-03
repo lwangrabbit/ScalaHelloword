@@ -2,31 +2,29 @@ package com.zte.exercise
 
 class UrlParse(val url:String) {
   def getProtocol():String = {
-    val protocolEndIndex = url.indexOf(":")
-    url.substring(0, protocolEndIndex)
+    url.substring(0, url.indexOf(":"))
   }
 
   def getDomain():String = {
-    val domainEndIndex: Int = getDomainEndIndex
-    if(domainEndIndex < 0)
-      url.substring(domainStartIndex)
+    if(getDomainEndIndex < 0)
+      url.substring(getDomainStartIndex)
     else
-      url.substring(domainStartIndex, domainEndIndex)
+      url.substring(getDomainStartIndex, getDomainEndIndex)
   }
 
   def getPath():String = {
-    val domainEndIndex: Int = getDomainEndIndex
-    if(domainEndIndex < 0) {
+    if(getDomainEndIndex < 0) {
       return ""
     } else {
-      val pathStartIndex = domainEndIndex + 1
-      return url.substring(pathStartIndex)
+      return url.substring(getDomainEndIndex + 1)
     }
   }
 
+  private def getDomainStartIndex: Int = {
+    url.indexOf("//") + 2
+  }
+
   private def getDomainEndIndex: Int = {
-    val domainStartIndex = url.indexOf("//") + 2
-    val domainEndIndex = url.indexOf('/', domainStartIndex)
-    domainEndIndex
+    url.indexOf('/', getDomainStartIndex)
   }
 }
