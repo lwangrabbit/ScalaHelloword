@@ -12,5 +12,10 @@ class UrlParseTest extends FunSpec with Matchers {
 			val urlParse = new UrlParse(url)
 			urlParse.getProtocol should be ("http")
 		}
+    it("ftp://test.com, the protocol should return ftp") {
+      val url = "ftp://test.com"
+      val urlParse = new UrlParse(url)
+      urlParse.getProtocol() should be ("ftp")
+    }
 	}
 }
