@@ -34,5 +34,10 @@ class UrlParseTest extends FunSpec with Matchers {
       val urlParse = new UrlParse(url)
       urlParse.getDomain() should be ("test.com")
     }
+    it("https://www.bankOfChina.com/a-path, the domain should return www.bankOfChina.com") {
+      val url = "https://www.bankOfChina.com/a-path"
+      val urlParse = new UrlParse(url)
+      urlParse.getDomain() should be ("www.bankOfChina.com")
+    }
   }
 }
