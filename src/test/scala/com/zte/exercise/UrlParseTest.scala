@@ -29,7 +29,7 @@ class UrlParseTest extends FunSpec with Matchers {
       val urlParse = new UrlParse(url)
       urlParse.getDomain() should be ("www.google.com")
     }
-    it("ftp://test.com, the domain should return ftp") {
+    it("ftp://test.com, the domain should return test.com") {
       val url = "ftp://test.com"
       val urlParse = new UrlParse(url)
       urlParse.getDomain() should be ("test.com")

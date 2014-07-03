@@ -8,6 +8,10 @@ class UrlParse(val url:String) {
 
   def getDomain():String = {
     val strIndex = url.indexOf("//")
-    url.substring(strIndex + 2)
+    val strEndIndex = url.indexOf('/',strIndex + 2)
+    if(strEndIndex < 0)
+      url.substring(strIndex + 2)
+    else
+      url.substring(strIndex + 2, strEndIndex)
   }
 }
