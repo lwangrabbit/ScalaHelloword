@@ -6,14 +6,14 @@ class UrlParse(val url:String) {
   }
 
   def getDomain():String = {
-    if(getDomainEndIndex < 0)
+    if(!hasUrlPath)
       url.substring(getDomainStartIndex)
     else
       url.substring(getDomainStartIndex, getDomainEndIndex)
   }
 
   def getPath():String = {
-    if(getDomainEndIndex < 0) {
+    if(!hasUrlPath) {
       return ""
     } else {
       return url.substring(getDomainEndIndex + 1)
@@ -27,4 +27,9 @@ class UrlParse(val url:String) {
   private def getDomainEndIndex: Int = {
     url.indexOf('/', getDomainStartIndex)
   }
+
+  private def hasUrlPath: Boolean = {
+    getDomainEndIndex >= 0
+  }
+
 }
