@@ -2,20 +2,20 @@ package com.zte.exercise
 
 class UrlParse(val url:String) {
   def getProtocol():String = {
-    if(hasUrlProtocol()) {
+    if(hasUrlProtocol) {
       url.substring(0, url.indexOf(":"))
     } else ""
   }
 
-  private def hasUrlProtocol():Boolean = {
+  private def hasUrlProtocol:Boolean = {
     url.indexOf(":") >= 0
   }
 
   def getDomain():String = {
-    if(!hasUrlPath)
-      url.substring(getDomainStartIndex)
-    else
-      url.substring(getDomainStartIndex, getDomainEndIndex)
+    if(!hasUrlProtocol && !hasUrlPath)  url
+    else if(!hasUrlProtocol && hasUrlPath)  url.substring(0, getDomainEndIndex)
+    else if(hasUrlProtocol && !hasUrlPath)  url.substring(getDomainStartIndex)
+    else url.substring(getDomainStartIndex, getDomainEndIndex)
   }
 
   def getPath():String = {
@@ -27,7 +27,8 @@ class UrlParse(val url:String) {
   }
 
   private def getDomainStartIndex: Int = {
-    url.indexOf("//") + 2
+    if(hasUrlProtocol) url.indexOf("//") + 2
+    else 0
   }
 
   private def getDomainEndIndex: Int = {
