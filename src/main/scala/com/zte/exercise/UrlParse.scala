@@ -20,11 +20,8 @@ class UrlParse(val url:String) {
   }
 
   def getPath():String = {
-    if(!hasUrlPath) {
-      return ""
-    } else {
-      return url.substring(getDomainEndIndex + 1)
-    }
+    if(!hasUrlPath)  ""
+    else  url.substring(getDomainEndIndex + 1)
   }
 
   private def getDomainStartIndex: Int = {
