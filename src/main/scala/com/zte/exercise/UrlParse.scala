@@ -2,9 +2,7 @@ package com.zte.exercise
 
 class UrlParse(val url:String) {
   def getProtocol():String = {
-    if(hasUrlProtocol) {
-      url.substring(getProtocolStartIndex, getProtocolEndIndex)
-    } else ""
+    url.substring(getProtocolStartIndex, getProtocolEndIndex)
   }
 
   private def hasUrlProtocol:Boolean = {
