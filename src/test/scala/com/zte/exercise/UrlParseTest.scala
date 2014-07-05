@@ -59,5 +59,20 @@ class UrlParseTest extends FunSpec with Matchers {
       val urlParse = new UrlParse(url)
       urlParse.getPath() should be ("")
     }
+    it("www.myweb.com/index.html, the protocol should return empty") {
+      val url = "www.myweb.com/index.html"
+      val urlParse = new UrlParse(url)
+      urlParse.getProtocol() should be ("")
+    }
+    it("www.myweb.com/index.html, the domain should return www.myweb.com") {
+      val url = "www.myweb.com/index.html"
+      val urlParse = new UrlParse(url)
+      urlParse.getDomain() should be ("www.myweb.com")
+    }
+    it("www.myweb.com/index.html, the path should return index.html") {
+      val url = "www.myweb.com/index.html"
+      val urlParse = new UrlParse(url)
+      urlParse.getPath() should be ("index.html")
+    }
 	}
 }
