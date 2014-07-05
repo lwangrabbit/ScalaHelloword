@@ -16,10 +16,7 @@ class UrlParse(val url:String) {
   }
 
   def getDomain():String = {
-    if(!hasUrlProtocol && !hasUrlPath)  url
-    else if(!hasUrlProtocol && hasUrlPath)  url.substring(0, getDomainEndIndex)
-    else if(hasUrlProtocol && !hasUrlPath)  url.substring(getDomainStartIndex)
-    else url.substring(getDomainStartIndex, getDomainEndIndex)
+    url.substring(getDomainStartIndex, getDomainEndIndex)
   }
 
   def getPath():String = {
