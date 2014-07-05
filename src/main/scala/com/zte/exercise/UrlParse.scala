@@ -36,11 +36,12 @@ class UrlParse(val url:String) {
   }
 
   private def getDomainEndIndex: Int = {
-    url.indexOf('/', getDomainStartIndex)
+    if(hasUrlPath) url.indexOf('/', getDomainStartIndex)
+    else url.length
   }
 
   private def hasUrlPath: Boolean = {
-    getDomainEndIndex >= 0
+    url.indexOf('/', getDomainStartIndex) >= 0
   }
 
 }
