@@ -44,15 +44,15 @@ class UrlParseTest extends FunSpec with Matchers {
       urlParse.getDomain() should be ("share.zte.com.cn")
       urlParse.getPath() should be ("tech/jsp/userlogin")
     }
-    it("abc.com" +
-       "the protocol should return empty," +
-       "the domain should return abc.com" +
-       "the path should return empt") {
+    it("abc.com, the protocol should return empty") {
       val url = "abc.com"
       val urlParse = new UrlParse(url)
-      urlParse.getDomain() should be ("")
+      urlParse.getProtocol() should be ("")
+    }
+    it("abc.com, the domain should return abc.com") {
+      val url = "abc.com"
+      val urlParse = new UrlParse(url)
       urlParse.getDomain() should be ("abc.com")
-      urlParse.getPath() should be ("")
     }
 	}
 }

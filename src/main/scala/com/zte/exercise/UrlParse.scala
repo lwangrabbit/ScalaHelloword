@@ -2,7 +2,13 @@ package com.zte.exercise
 
 class UrlParse(val url:String) {
   def getProtocol():String = {
-    url.substring(0, url.indexOf(":"))
+    if(hasUrlProtocol()) {
+      url.substring(0, url.indexOf(":"))
+    } else ""
+  }
+
+  private def hasUrlProtocol():Boolean = {
+    url.indexOf(":") >= 0
   }
 
   def getDomain():String = {
