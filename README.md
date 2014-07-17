@@ -1,13 +1,11 @@
-==============
+练习：URL解析
 
-��ϰ��URL����
+对于给定的URL，例如http://www.google.com，得到结果：
+--> 协议protocol: http
+--> 域名domain: www.google.com
+--> 路径path: empty
 
-	���ڸ�����URL������http://www.google.com���õ�������
-	--> Э��protocol: http
-	--> ����domain: www.google.com
-	--> ·��path: empty
-
-	һЩ���ӣ�
-	--> http://some.thing ����Э��http
-	--> ftp://test.com ��������test.com
-	--> http://test.site.com/a-path ����·�� a-path
+一些例子：
+--> http://some.thing 返回协议http
+--> ftp://test.com 返回域名test.com
+--> http://test.site.com/a-path 返回路径 a-path
