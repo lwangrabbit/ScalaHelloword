@@ -1,16 +1,13 @@
-ScalaHelloword
 ==============
 
-gradle template for quickly construct your own application.
+ï¿½ï¿½Ï°ï¿½ï¿½URLï¿½ï¿½ï¿½ï¿½
 
-Á·Ï°£ºURL½âÎö
+	ï¿½ï¿½ï¿½Ú¸ï¿½ï¿½ï¿½ï¿½ï¿½URLï¿½ï¿½ï¿½ï¿½ï¿½ï¿½http://www.google.comï¿½ï¿½ï¿½Ãµï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+	--> Ð­ï¿½ï¿½protocol: http
+	--> ï¿½ï¿½ï¿½ï¿½domain: www.google.com
+	--> Â·ï¿½ï¿½path: empty
 
-	¶ÔÓÚ¸ø¶¨µÄURL£¬ÀýÈçhttp://www.google.com£¬µÃµ½½á¹û£º
-	--> Ð­Òéprotocol: http
-	--> ÓòÃûdomain: www.google.com
-	--> Â·¾¶path: empty
-
-	Ò»Ð©Àý×Ó£º
-	--> http://some.thing ·µ»ØÐ­Òéhttp
-	--> ftp://test.com ·µ»ØÓòÃûtest.com
-	--> http://test.site.com/a-path ·µ»ØÂ·¾¶ a-path
+	Ò»Ð©ï¿½ï¿½ï¿½Ó£ï¿½
+	--> http://some.thing ï¿½ï¿½ï¿½ï¿½Ð­ï¿½ï¿½http
+	--> ftp://test.com ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½test.com
+	--> http://test.site.com/a-path ï¿½ï¿½ï¿½ï¿½Â·ï¿½ï¿½ a-path
